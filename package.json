@@ -1,0 +1,8 @@
+{
+  "name": "three-stones-online",
+  "version": "1.0.0",
+  "description": "Arabic online three-stone tic-tac-toe with player-selected stone removal",
+  "main": "server.js",
+  "scripts": { "start": "node server.js" },
+  "dependencies": { "ws": "^8.18.0" }
+}
