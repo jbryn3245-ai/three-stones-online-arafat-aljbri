@@ -1,0 +1,10 @@
+{
+  "name": "إكس أو — ثلاثة أحجار أونلاين",
+  "short_name": "ثلاثة أحجار",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#10172a",
+  "theme_color": "#10172a",
+  "lang": "ar",
+  "dir": "rtl"
+}

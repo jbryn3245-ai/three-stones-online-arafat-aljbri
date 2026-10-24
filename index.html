@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="theme-color" content="#10172a">
+<title>إكس أو — ثلاثة أحجار أونلاين</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<main class="app">
+  <header>
+    <div class="logo">✕ <span>إكس أو</span> ○</div>
+    <p class="subtitle">ثلاثة أحجار • أونلاين</p>
+  </header>
+
+  <section id="home" class="panel">
+    <h1>تحدَّ لاعبًا حقيقيًا</h1>
+    <p>لكل لاعب 3 أحجار. بعد وضع الحجر الرابع، تختار بنفسك أي حجر من أحجارك تحذفه.</p>
+    <button id="playBtn" class="primary">ابحث عن لاعب عشوائي</button>
+    <div class="private-box">
+      <button id="createRoomBtn" class="secondary">إنشاء غرفة خاصة</button>
+      <div class="join-row">
+        <input id="roomCode" type="text" maxlength="5" placeholder="رمز الغرفة" aria-label="رمز الغرفة" autocomplete="off">
+        <button id="joinRoomBtn" class="secondary">دخول</button>
+      </div>
+      <div id="roomInfo" class="hint"></div>
+    </div>
+    <div id="connection" class="hint">جارٍ الاتصال...</div>
+    <div class="rules">
+      <strong>طريقة اللعب</strong>
+      <ol>
+        <li>ضع أحجارك الثلاثة على اللوحة.</li>
+        <li>بعد ذلك، اختر مربعًا فارغًا لوضع حجر جديد.</li>
+        <li>ستظهر أحجارك الثلاثة؛ اضغط الحجر الذي تريد حذفه.</li>
+        <li>الفائز هو أول من يصنع ثلاثة أحجار متتالية.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="game" class="panel hidden">
+    <div class="players">
+      <div id="youCard" class="player-card"><span class="mark">✕</span><span id="youName">أنت</span><small id="youCount">0/3 أحجار</small></div>
+      <div class="vs">VS</div>
+      <div id="oppCard" class="player-card"><span class="mark">○</span><span id="oppName">الخصم</span><small id="oppCount">0/3 أحجار</small></div>
+    </div>
+    <div id="status" class="status">دورك</div>
+    <div id="board" class="board" aria-label="لوحة إكس أو"></div>
+    <div id="instruction" class="instruction">ضع حجرًا في مربع فارغ.</div>
+    <div class="actions">
+      <button id="rematchBtn" class="secondary hidden">العب مرة أخرى</button>
+      <button id="leaveBtn" class="ghost">الخروج</button>
+    </div>
+  </section>
+  <footer>لعبة تجريبية • لا تحتاج إلى حساب</footer>
+</main>
+<script src="/client.js"></script>
+</body>
+</html>
