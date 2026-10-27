@@ -1,0 +1,371 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  color-scheme: dark;
+  --bg: #050607;
+  --panel: #0b0e12;
+  --panel-soft: #11151b;
+  --gold: #f3c65b;
+  --gold-light: #ffe7a0;
+  --gold-dark: #9d6b16;
+  --text: #f8f4e9;
+  --muted: #b9b3a4;
+  --line: #4b3a19;
+  --x: #f5c451;
+  --o: #e8e8e8;
+}
+
+html {
+  min-height: 100%;
+  background: var(--bg);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  background:
+    radial-gradient(ellipse at 50% 0%, #30220c 0%, transparent 42%),
+    radial-gradient(ellipse at 50% 100%, #171107 0%, transparent 45%),
+    var(--bg);
+}
+
+.app {
+  width: min(100%, 440px);
+}
+
+header {
+  text-align: center;
+  margin: 8px 0 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-size: 2rem;
+  font-weight: 950;
+  letter-spacing: 1px;
+  color: var(--gold-light);
+  text-shadow: 0 0 18px #f3c65b35;
+}
+
+.logo span {
+  color: var(--text);
+}
+
+.subtitle {
+  margin: 5px 0 0;
+  color: var(--gold);
+  letter-spacing: 1px;
+}
+
+.panel {
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: linear-gradient(155deg, #11151b, #080a0d 70%);
+  box-shadow: 0 18px 50px #000b, inset 0 1px 0 #ffffff08;
+}
+
+h1 {
+  margin: 0 0 10px;
+  font-size: 1.4rem;
+  color: var(--gold-light);
+}
+
+p {
+  line-height: 1.8;
+}
+
+.primary,
+.secondary,
+.ghost {
+  min-height: 48px;
+  padding: 13px 16px;
+  border-radius: 14px;
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform .15s ease, filter .15s ease, border-color .15s ease;
+}
+
+.primary {
+  width: 100%;
+  margin: 8px 0;
+  border: 1px solid #ffe6a0;
+  color: #211604;
+  background: linear-gradient(135deg, #ffe7a0, #f1bd3f 55%, #b87916);
+  box-shadow: 0 5px 20px #d99b2426;
+}
+
+.primary:disabled {
+  opacity: .55;
+}
+
+.secondary {
+  color: #ffe7a0;
+  border: 1px solid #8a6424;
+  background: linear-gradient(145deg, #211a0d, #12100b);
+}
+
+.ghost {
+  color: var(--text);
+  border: 1px solid #39332a;
+  background: #15181d;
+}
+
+.primary:active,
+.secondary:active,
+.ghost:active {
+  transform: scale(.98);
+  filter: brightness(1.1);
+}
+
+.hint,
+.instruction {
+  min-height: 24px;
+  margin: 8px 0;
+  text-align: center;
+  color: var(--muted);
+  font-size: .95rem;
+}
+
+.private-box {
+  display: grid;
+  gap: 10px;
+  margin-top: 10px;
+  padding-top: 14px;
+  border-top: 1px solid #302719;
+}
+
+.private-box .secondary {
+  width: 100%;
+}
+
+.join-row {
+  display: flex;
+  gap: 8px;
+}
+
+.join-row input {
+  min-width: 0;
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #554324;
+  border-radius: 12px;
+  outline: none;
+  background: #080a0d;
+  color: var(--text);
+  font: inherit;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 3px;
+}
+
+.join-row input:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px #f3c65b18;
+}
+
+.join-row button {
+  flex: 0 0 90px;
+}
+
+.room-code {
+  color: var(--gold-light);
+  font-size: 1.6rem;
+  font-weight: 900;
+  letter-spacing: 5px;
+}
+
+.rules {
+  margin-top: 18px;
+  padding: 14px;
+  border: 1px solid #302719;
+  border-radius: 16px;
+  background: #080a0d;
+  color: #e8e0cf;
+  font-size: .92rem;
+}
+
+.rules strong {
+  color: var(--gold);
+}
+
+.rules ol {
+  padding-right: 22px;
+  margin-bottom: 0;
+  line-height: 1.9;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.players {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.player-card {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 10px 4px;
+  border: 1px solid #3b3325;
+  border-radius: 15px;
+  background: #090b0e;
+}
+
+.player-card.active {
+  border-color: var(--gold);
+  box-shadow: 0 0 18px #f3c65b18, inset 0 0 12px #f3c65b08;
+}
+
+.mark {
+  font-size: 1.8rem;
+  font-weight: 950;
+}
+
+.player-card:first-child .mark {
+  color: var(--x);
+}
+
+.player-card:last-child .mark {
+  color: var(--o);
+}
+
+.player-card small {
+  color: var(--muted);
+  font-size: .75rem;
+}
+
+.vs {
+  color: var(--gold);
+  font-size: .75rem;
+  font-weight: 950;
+}
+
+.status {
+  min-height: 24px;
+  margin: 18px 0 12px;
+  text-align: center;
+  color: var(--gold-light);
+  font-weight: 850;
+}
+
+/* لوحة اللعب: 3 أعمدة × 3 صفوف = 9 مربعات فقط */
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+  gap: 9px;
+  width: min(100%, 340px);
+  aspect-ratio: 1 / 1;
+  margin: 0 auto;
+}
+
+.cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  min-height: 0;
+  aspect-ratio: 1 / 1;
+  border: 1px solid #6d5121;
+  border-radius: 15px;
+  background: linear-gradient(145deg, #12151a, #070809);
+  color: var(--text);
+  font-size: clamp(2.5rem, 12vw, 4rem);
+  font-weight: 950;
+  cursor: pointer;
+  touch-action: manipulation;
+  box-shadow: inset 0 1px 0 #ffffff08, 0 4px 10px #0005;
+}
+
+.cell:disabled {
+  cursor: default;
+  opacity: 1;
+}
+
+.cell.x {
+  color: var(--x);
+  text-shadow: 0 0 16px #f3c65b3b;
+}
+
+.cell.o {
+  color: var(--o);
+  text-shadow: 0 0 14px #ffffff22;
+}
+
+.cell.selectable {
+  outline: 2px solid var(--gold-light);
+  box-shadow: 0 0 18px #f3c65b28;
+  animation: pulse 1s infinite;
+}
+
+.cell:active {
+  transform: scale(.97);
+}
+
+@keyframes pulse {
+  50% {
+    box-shadow: 0 0 0 5px #f3c65b12, 0 0 18px #f3c65b28;
+  }
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.actions button {
+  flex: 1;
+}
+
+footer {
+  margin: 15px 0 0;
+  text-align: center;
+  color: #827967;
+  font-size: .8rem;
+}
+
+@media (max-width: 360px) {
+  body {
+    padding: 10px;
+  }
+
+  .panel {
+    padding: 15px;
+  }
+
+  .board {
+    gap: 6px;
+  }
+
+  .cell {
+    border-radius: 11px;
+  }
+}
+
+@media (min-height: 800px) {
+  .panel {
+    padding: 24px;
+  }
+}
